@@ -1,0 +1,14 @@
+[Unit]
+Description=IBKR Net Value Tracker Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/ibkr_net_worth_tracker
+ExecStart=/bin/bash /opt/ibkr_net_worth_tracker/ibkr_tracker_wrapper.sh
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target 
